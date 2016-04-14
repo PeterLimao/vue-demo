@@ -1,0 +1,25 @@
+{
+  "name": "vue-demo",
+  "description": "This is a demo about vue+vue-loader+webpack+gulp workflow",
+  "main": "\"\"",
+  "authors": [
+    "PeterL"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "vue-demo"
+  ],
+  "homepage": "https://github.com/PeterLimao/vue-demo",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.3",
+    "bootstrap": "3.3.6"
+  }
+}
