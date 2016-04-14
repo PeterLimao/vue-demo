@@ -5,6 +5,15 @@
 </style>
 <template>
     <div class="footer">
-        footer
+        {{message}}
     </div>
 </template>
+<script>
+    module.exports = {
+        data: function() {
+            return {
+                message: 'footer'
+            }
+        }
+    };
+</script>

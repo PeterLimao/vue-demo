@@ -5,6 +5,15 @@
 </style>
 <template>
     <div class="header">
-        Header
+        {{message}}
     </div>
 </template>
+<script>
+    module.exports = {
+        data: function() {
+            return {
+                message: 'header'
+            }
+        }
+    };
+</script>
