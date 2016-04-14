@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 
-var bowerPath = './bower_components';
+var bowerPath = process.cwd() + '/bower_components';
 
 module.exports = {
     devTool: 'source-map',
@@ -20,7 +20,7 @@ module.exports = {
         extensions: ['', '.js', '.vue', '.json', '.less'],
         alias: {
             jquery: bowerPath + '/jquery/dist/jquery.min.js',
-            bootstrap: bowerPath + './bower_components/bootstrap/dist/js/bootstrap.min.js'
+            bootstrap: bowerPath + '/bootstrap/dist/js/bootstrap.min.js'
         }
     },
     plugins: [
