@@ -47,6 +47,7 @@
                 this.configList(true, {
                     message: _self.inputMsg
                 });
+                this.inputMsg = '';
             },
             delete: function() {
                 this.configList(false);

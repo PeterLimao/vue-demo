@@ -5,6 +5,8 @@ var bowerPath = process.cwd() + '/bower_components';
 var myAlias = {
     jquery: bowerPath + '/jquery/dist/jquery.min.js',
     bootstrap: bowerPath + '/bootstrap/dist/js/bootstrap.min.js',
+    routerConfig: process.cwd() + '/src/js/common/router/routerConfig',
+    components: process.cwd() + '/src/components',
     actions: process.cwd() + '/src/js/common/vuex/actions.js',
     common: process.cwd() + '/src/js/common/common.js',
     mutations: process.cwd() + '/src/js/common/vuex/mutations',

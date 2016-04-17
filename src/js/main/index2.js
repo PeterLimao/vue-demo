@@ -1,10 +1,7 @@
 var common = require('common');
-var store = require('store');
-var app = require('../../components/app');
+var app = require('components/app');
+var router = new common.vueRouter();
+var routerConfig = require('routerConfig');
 
-new common.vue({
-    el: 'body',
-    components: {
-        app: app
-    }
-});
+routerConfig(router);
+router.start(app, '#app');
