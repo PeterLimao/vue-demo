@@ -2,7 +2,7 @@
     /* 必需 */
     .expand-transition {
         transition: all .3s ease;
-        height: 30px;
+        height: 300px;
         padding: 10px;
         background-color: #eee;
         overflow: hidden;

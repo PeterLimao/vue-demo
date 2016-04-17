@@ -5,22 +5,51 @@
 </style>
 <template>
     <div class="header">
-        <input type="text" v-model="msg">
-        <button type="button" v-on:click="notify">DisPatch Msg</button>
+        <ul>
+            <li v-for="msg in msgs">
+                {{msg.message}}
+            </li>
+        </ul>
+        <div>
+            <input type="text" v-model="inputMsg">
+            <button type="button" v-on:click="add">添加</button>
+            <button type="button" v-on:click="delete">删除</button>
+        </div>
     </div>
 </template>
 <script>
+    var actions = require('actions');
+
     module.exports = {
         data: function() {
             return {
-                msg: 'hello'
+                inputMsg: ''
+            }
+        },
+        vuex: {
+            getters: {
+                getMsgList: function(state) {
+                    return state.messages;
+                }
+            },
+            actions: {
+                configList: actions.configList
+            }
+        },
+        computed: {
+            msgs: function() {
+                return this.getMsgList;
             }
         },
         methods: {
-            notify: function() {
-                var msg = this.msg;
-                this.$dispatch('child-msg', msg);
-                this.msg = '';
+            add: function() {
+                var _self = this;
+                this.configList(true, {
+                    message: _self.inputMsg
+                });
+            },
+            delete: function() {
+                this.configList(false);
             }
         }
     };

@@ -1,12 +1,22 @@
 var webpack = require('webpack');
 
 var bowerPath = process.cwd() + '/bower_components';
+//别名配置
+var myAlias = {
+    jquery: bowerPath + '/jquery/dist/jquery.min.js',
+    bootstrap: bowerPath + '/bootstrap/dist/js/bootstrap.min.js',
+    actions: process.cwd() + '/src/js/common/vuex/actions.js',
+    common: process.cwd() + '/src/js/common/common.js',
+    mutations: process.cwd() + '/src/js/common/vuex/mutations',
+    state: process.cwd() + '/src/js/common/vuex/state.js',
+    store: process.cwd() + '/src/js/common/vuex/store.js'
+};
 
 module.exports = {
     devTool: 'source-map',
     entry: {
-        'index1': ['./src/js/index1.js'],
-        'index2': ['./src/js/index2.js']
+        'index1': ['./src/js/main/index1.js'],
+        'index2': ['./src/js/main/index2.js']
     },
     output: {
         filename: '[name].js'
@@ -18,10 +28,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js', '.vue', '.json', '.less'],
-        alias: {
-            jquery: bowerPath + '/jquery/dist/jquery.min.js',
-            bootstrap: bowerPath + '/bootstrap/dist/js/bootstrap.min.js'
-        }
+        alias: myAlias
     },
     plugins: [
         new webpack.ProvidePlugin({
