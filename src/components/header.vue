@@ -1,6 +1,7 @@
 <style>
     .header {
-        color: blue;
+        background: #000;
+        color: #fff;
     }
 </style>
 <template>

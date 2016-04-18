@@ -3,7 +3,6 @@
         background-color: #d8d8d8;
         font-size: 16px;
         font-weight: 400;
-        height: 5.1rem;
         ul {
             text-decoration: none;
             li {
@@ -22,13 +21,15 @@
                 <a href="{{i.href}}">{{i.text}}</a>
             </li>
         </ul>
+        <div>
+            <a v-link="{path: '/footer/bar1'}">Go bar1</a>
+            <a v-link="{path: '/footer/bar2'}">Go bar2</a>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 <script>
     module.exports = {
-        el: function() {
-            return '#footer';
-        },
         data: function() {
             return {
                 list: [
@@ -46,6 +47,14 @@
                     }
                 ]
             };
+        },
+        route: {
+            activate: function(transition) {
+                transition.next();
+            },
+            deactivate: function(transition) {
+                transition.next();
+            }
         }
     };
 </script>

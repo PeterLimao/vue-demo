@@ -3,8 +3,6 @@ var webpack = require('webpack');
 var bowerPath = process.cwd() + '/bower_components';
 //别名配置
 var myAlias = {
-    jquery: bowerPath + '/jquery/dist/jquery.min.js',
-    bootstrap: bowerPath + '/bootstrap/dist/js/bootstrap.min.js',
     routerConfig: process.cwd() + '/src/js/common/router/routerConfig',
     components: process.cwd() + '/src/components',
     actions: process.cwd() + '/src/js/common/vuex/actions.js',
@@ -21,7 +19,9 @@ module.exports = {
         'index2': ['./src/js/main/index2.js']
     },
     output: {
-        filename: '[name].js'
+        publicPath: process.cwd() + '/dist/assets/js/',
+        filename: '[name].js',
+        chunkFilename: '[id].chunk.js'
     },
     module: {
         loaders: [
@@ -33,10 +33,7 @@ module.exports = {
         alias: myAlias
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            bootstrap: 'bootstrap'
-        }),
+        new webpack.ProvidePlugin({}),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
