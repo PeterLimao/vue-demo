@@ -24,9 +24,7 @@ gulp.task('html-clean', function() {
 });
 
 gulp.task('webpack', ['js-clean'], function() {
-    return gulp.src('./main.js')
-    .pipe(webpack(require('./webpack.config.js')))
-    .pipe(gulp.dest(assetsBasePath + '/js'));
+    return webpack(require('./webpack.config.js'));
 });
 
 gulp.task('copy-html-src', ['html-clean'], function() {
